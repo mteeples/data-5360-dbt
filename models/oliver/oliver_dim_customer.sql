@@ -6,4 +6,5 @@ select
     email,
     phone_number,
     state
+
 from {{ source("oliver_landing", "customer") }}

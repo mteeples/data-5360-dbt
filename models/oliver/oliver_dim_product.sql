@@ -3,4 +3,5 @@ select
     product_id,
     product_name,
     description
+
 from {{ source("oliver_landing", "product") }}

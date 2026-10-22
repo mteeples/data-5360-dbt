@@ -7,4 +7,5 @@ select
     phone_number,
     hire_date,
     position
+
 from {{ source("oliver_landing", "employee") }}

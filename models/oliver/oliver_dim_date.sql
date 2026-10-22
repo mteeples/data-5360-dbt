@@ -10,4 +10,5 @@ SELECT
     month_name,
     quarter_of_year as quarter,
     year_number as year
+
 from cte_date

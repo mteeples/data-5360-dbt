@@ -5,4 +5,5 @@ select distinct
     street,
     city,
     state
+
 from {{ source("oliver_landing", "store") }}
