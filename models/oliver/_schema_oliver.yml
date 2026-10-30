@@ -11,6 +11,10 @@ models:
     description: "Oliver's Sweets Product Dimension"
   - name: oliver_dim_store
     description: "Oliver's Sweets Store Dimension"
+  - name: oliver_fact_certifications
+    description: |
+      Employee Certification Fact.
+      Each record represents a single certification for a single employee.
   - name: oliver_fact_sales
     description: "Oliver's Sweets Sales Fact"
   - name: oliver_stg_employee_certifications
