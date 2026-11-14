@@ -43,3 +43,6 @@ models:
     oliver:
       +materialized: table
       +schema: dw_oliver
+    ecoessentials:
+      +materialized: table
+      +schema: dw_ecoessentials
