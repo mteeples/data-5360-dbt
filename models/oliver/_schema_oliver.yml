@@ -3,20 +3,49 @@ version: 2
 models:
   - name: oliver_dim_customer
     description: "Oliver's Sweets Customer Dimension"
+
   - name: oliver_dim_date
     description: "Oliver's Sweets Date Dimension"
+
   - name: oliver_dim_employee
     description: "Oliver's Sweets Employee Dimension"
+    columns:
+      - name: employee_key
+        data_tests:
+          - unique
+          - not_null
+      - name: position
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Cashier
+                  - Customer Service
+                  - Manager
+                  - Sales Associate
+                  - Stock Clerk
+
   - name: oliver_dim_product
     description: "Oliver's Sweets Product Dimension"
+
   - name: oliver_dim_store
     description: "Oliver's Sweets Store Dimension"
+
   - name: oliver_fact_certifications
     description: |
       Employee Certification Fact.
       Each record represents a single certification for a single employee.
+
   - name: oliver_fact_sales
     description: "Oliver's Sweets Sales Fact"
+    columns:
+      - name: employee_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('oliver_dim_employee')
+                field: employee_key
+
   - name: oliver_stg_employee_certifications
     description: |
       Staging model for employee certifications.
